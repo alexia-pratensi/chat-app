@@ -1,0 +1,18 @@
+<!-- Navbar -->
+<mat-toolbar color="primary" style="min-height: 55px !important; height: 55px !important;" *ngIf="!isHomePage()">
+  <div class="nav-container">
+    <div class="brand">
+      <div class="logo">
+        <img src="../assets/logo.png" alt="Logo" width="50">
+      </div>
+      <div>
+          <h1 class="title">YOUR CAR YOUR WAY</h1>
+      </div>
+    </div>
+    <div class="logout-btn">
+      <button mat-raised-button color="primary" (click)="logout()">Se déconnecter</button>
+    </div>  
+  </div>
+</mat-toolbar>
+
+<router-outlet></router-outlet>

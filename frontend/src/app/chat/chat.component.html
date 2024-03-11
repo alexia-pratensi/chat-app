@@ -1,0 +1,86 @@
+<!-- <div class="chat-container">
+  <div class="message-container" *ngFor="let message of messages">
+    <div class="message" [ngClass]="{'sent': message.sourceUser.id === currentUser$.id, 'received': message.sourceUser.id !== currentUser$.id}">
+      <span class="sender">{{ message.sourceUser.id === currentUser$.id ? 'You' : 'Agent' }}</span>
+      <span class="content">{{ message.content }}</span>
+    </div>
+  </div>
+</div> -->
+<div class="chat-container" #messageContainer>
+  <div class="message-container" *ngFor="let message of messages">
+    <div class="message" [ngClass]="{'sent': message.sourceUser.id === currentUser$.id, 'received': message.sourceUser.id !== currentUser$.id}">
+      <div class="message-header">{{ message.sourceUser.id === currentUser$.id ? 'Vous' : message.sourceUser.username }}</div>
+      <div class="content">{{ message.content }}</div>
+    </div>
+  </div>
+</div>
+<div class="input-container">
+  <input type="text" [(ngModel)]="newMessage" placeholder="Type your message..." (keyup.enter)="sendMessage()">
+  <button (click)="sendMessage()">Send</button>
+</div>
+
+
+
+
+
+
+<!-- chat.component.html -->
+
+<!-- <div class="chat-container">
+  <div class="chat-header">
+    <h2>Chat</h2>
+  </div>
+  <div class="message-list">
+    <ul>
+      <li *ngFor="let message of chatService.messages">{{ message }}</li>
+    </ul>
+  </div>
+  <div class="message-input">
+    <input type="text" [(ngModel)]="newMessage" placeholder="Type your message here...">
+    <button (click)="sendMessage()">Send</button>
+  </div>
+</div> -->
+
+<!-- 
+
+<div *ngIf="connected" id="chat-page">
+    <div class="chat-container">
+      <div class="chat-header">
+        <h2>Spring WebSocket Chat</h2>
+      </div>
+      <div *ngIf="!connected" class="connecting">
+        Connecting...
+      </div>
+      <ul id="messageArea">
+        <li *ngFor="let message of messages">{{ message }}</li>
+      </ul>
+      <form id="messageForm" name="messageForm" (ngSubmit)="sendMessage()">
+        <div class="form-group">
+          <div class="input-group clearfix">
+            <input type="text" id="message" placeholder="Type a message..." autocomplete="off" class="form-control" [(ngModel)]="newMessage"/>
+            <button type="submit" class="primary">Send</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+  <div id="chat-page" class="hidden">
+    <div class="chat-container">
+        <div class="chat-header">
+            <h2>Spring WebSocket Chat</h2>
+        </div>
+    
+        <ul id="messageArea">
+            <li *ngFor="let message of messages">{{ message }}</li>
+        </ul>
+        <form (ngSubmit)="sendMessage()">
+            <div class="form-group">
+                <div class="input-group clearfix">
+                    <input type="text" id="message" placeholder="Type a message..." autocomplete="off" class="form-control" [(ngModel)]="messageText"/>
+                    <button type="submit" class="primary">Send</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div> -->
