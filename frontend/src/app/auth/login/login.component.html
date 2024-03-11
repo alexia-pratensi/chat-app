@@ -1,0 +1,25 @@
+<div class="login">
+    <div class="login-image">
+        <img src="../../../assets/banner.png" width="100%" alt="logo">
+    </div>
+
+    <!-- Form to log in the user -->
+    <div class="login-form">
+        <h1>Se connecter</h1>
+        <form class="field-items"  [formGroup]="loginForm" (ngSubmit)="submitLogin()">
+            <mat-label>Identifiant</mat-label>
+            <mat-form-field appearance=outline>
+                <input matInput type="text" formControlName="username">
+            </mat-form-field>
+            <mat-label>Mot de passe</mat-label>
+            <mat-form-field appearance=outline id="field-password">
+                <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                    <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+                </button>
+            </mat-form-field >
+            <button  mat-flat-button class="submit-login" type="submit" [disabled]="loginForm.invalid">Se connecter</button>
+            <span *ngIf="onError" class="error ml2">Une erreur persiste.</span>
+        </form>
+    </div>
+</div>
