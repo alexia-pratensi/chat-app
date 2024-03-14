@@ -1,0 +1,72 @@
+.arrow-back {
+    margin-left: 3rem;
+}
+
+h1 {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+form {
+    width: 15%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    .field-items {
+        input {
+            padding: 0rem 1rem;
+            &:focus {
+                background-color: #FAFAFA;
+            }
+        }
+        #field-password {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            input {
+                padding: 0rem 1rem;
+            }
+        }
+    }
+
+    span {
+        font-size: 0.8rem;
+        text-align: justify;
+    }
+        
+    .submit-login {
+        display: flex;
+        width: fit-content;
+        margin: 2rem auto;
+        padding: 0px 2rem;
+        background-color: #7451eb;
+        color: white;
+        &:disabled {
+            background-color: #ccc;
+            color: #888;
+        }
+    }
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+    color: black;
+}
+
+@media screen and (max-width: 1024px) {
+    form {
+        width: 35%;
+    } 
+}
+
+@media screen and (max-width: 600px) {
+
+    .login-image{
+        img {
+            display: block;
+            margin: 0 auto;
+        }
+    }
+    form {
+        width: 60%;
+    } 
+}

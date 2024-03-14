@@ -1,0 +1,31 @@
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+    .brand {
+        display: flex;
+        align-items: center;
+        .logo {
+            margin: 9px 20px 0 30px;
+        } 
+    }
+}
+   
+@media (max-width: 425px) {
+    .nav-container {
+        .brand {
+            .logo {
+                margin: 9px 20px 0 0px;
+            } 
+            .title {
+                font-size: 15px;
+            }
+        }
+        .mat-mdc-raised-button {
+            font-size: 10px;
+        }
+        
+    }
+}
