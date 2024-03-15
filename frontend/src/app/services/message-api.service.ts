@@ -13,10 +13,12 @@ export class MessageApiService {
 
   constructor(private http: HttpClient) { }
 
+  // Fetches the users who sent messages to the agent
   public getMessagesFromUsersToAgent(agentId: number): Observable<User[]> {
     return this.http.get<User[]>(`${this.baseUrl}/${agentId}`);
   }
 
+  // Fetches the message history of the chat between the 2 users of the chat
   public loadMessageHistory(userId: number): Observable<Message[]> {
     return this.http.get<Message[]>(`${this.baseUrl}/history/${userId}`);
   }

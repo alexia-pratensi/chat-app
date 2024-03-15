@@ -1,11 +1,11 @@
 <div class="dashboard-agent">
-    <h2>Bonjour {{(currentUser$ | async)?.username}} !</h2>
+    <h2>Bonjour {{ (currentUser$ | async)?.username }} !</h2>
     <h3>Bienvenue sur votre tableau de bord 📅</h3>
     <h5>Liste des clients ayant contacté le service commercial</h5>
   
     <ul class="user-list">
       <li *ngFor="let user of users">
-        <span (click)="navigateToChat(user.id)">{{user.username}}</span>
+        <span (click)="navigateToChat(user.id)">{{ user.username }}</span>
       </li>
     </ul>
   </div>

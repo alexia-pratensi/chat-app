@@ -1,63 +1,76 @@
+.chat-layout {
+  display: flex;
+  flex-direction: column;
+  height: calc( 100vh - 55px ); ;
+}
+
 .chat-container {
-    height: 300px;
-    overflow-y: auto;
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px;
+  padding: 2rem;
+
+  @media screen and (max-width: 425px){
+    padding: 0rem;
+    
   }
-  
-  .message-container {
-    margin-bottom: 10px;
-    max-height: 500px;
-    overflow-y: auto;
-  }
-  
-  .message {
-    // padding: 5px;
-    // border-radius: 5px;
-    // max-width: 70%;
-    // word-wrap: break-word;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 10px;
-    padding: 10px;
-    border-radius: 15px;
-    max-width: 70%;
-    word-wrap: break-word;
-  }
-  
-  .sent {
-    // background-color: #DCF8C6;
-    // align-self: flex-end;
-    background-color: #DCF8C6;
-    align-self: flex-end;
-    border-bottom-right-radius: 0;
-  }
-  
-  .received {
-    // background-color: #E8E8E8;
-    // align-self: flex-start;
+}
+
+.message-container {
+  display: flex;
+  // justify-content: center; 
+  margin-bottom: 10px;
+  border-radius: 20px;
+  padding: 10px 20px ;
+}
+
+.message-header {
+  font-size: 0.8rem;
+  margin-bottom: 0.2rem;
+  margin-left: 0.3rem;
+}
+
+.message {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  border-radius: 15px;
+}
+
+.content {
+  padding: 0.8rem 1rem;
+  border-radius: 0.5rem;
+}
+
+.message-container:has(.message.received) {
+  justify-content: flex-start;
+  .content {
     background-color: #E8E8E8;
-    align-self: flex-start;
-    border-bottom-left-radius: 0;
   }
-  
-  .sender {
-    font-weight: bold;
+}
+
+.message-container:has(.message.sent) {
+  justify-content: flex-end;
+  .content {
+    background-color: #DCF8C6;
   }
-  
-  .input-container {
-    margin-top: 10px;
-  }
-  
-  input[type='text'] {
-    width: 80%;
-    padding: 8px;
-    margin-right: 5px;
-  }
-  
-  button {
-    padding: 8px 15px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
-  
+}
+
+.input-container {
+  display: flex;
+  padding: 10px;
+}
+
+input[type='text'] {
+  flex: 1;
+  padding: 8px;
+  margin-right: 5px;
+}
+
+button {
+  padding: 8px 15px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}

@@ -37,7 +37,7 @@ export class LoginComponent {
     ]
   });
 
-  // Sends the login request to the server and redirects to the posts page when the form is submitted
+  // Sends the login request to the server and redirects to the chat or agent page when the form is submitted
   protected submitLogin(): void {
     const loginRequest = this.loginForm.value as LoginRequest;
     this.authService.login(loginRequest)

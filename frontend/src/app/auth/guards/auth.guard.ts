@@ -10,10 +10,10 @@ export class AuthGuard implements CanActivate {
               private sessionService: SessionService) {}
 
   // Allows access to the route if the user is logged in
-  // Otherwise, redirects to the login page
+  // Otherwise, redirects to the root route
   public canActivate(): boolean {
     if (!this.sessionService.isLogged) {
-      this.router.navigateByUrl('/login');
+      this.router.navigateByUrl('/');
       return false;
     }
     return true;
