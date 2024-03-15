@@ -30,6 +30,7 @@ export class DashboardAgentComponent implements OnInit, OnDestroy {
       takeUntil(this.unsubscribe$)
     ).subscribe({
       next: (user: User) => {
+        // Fetching the users who sent messages to the agent
         this.messageApiService.getMessagesFromUsersToAgent(user.id).pipe(
           takeUntil(this.unsubscribe$)
         ).subscribe({
@@ -48,7 +49,7 @@ export class DashboardAgentComponent implements OnInit, OnDestroy {
     this.unsubscribe$.complete();
   }
 
-  navigateToChat(userId: number) {
+  public navigateToChat(userId: number) {
     this.router.navigate(['/chat', userId]);
   }
 }

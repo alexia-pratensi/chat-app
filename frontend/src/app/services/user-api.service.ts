@@ -19,7 +19,7 @@ export class UserApiService {
   public login(loginRequest: LoginRequest): Observable<SessionInformation> {
     return this.httpClient.post<SessionInformation>(`${this.pathService}/login`, loginRequest);
   }
-
+  // Fetches the user by id
   public getById(id: string): Observable<User> {
     return this.httpClient.get<User>(`${this.pathService}/${id}`);
   }

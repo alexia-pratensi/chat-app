@@ -12,7 +12,7 @@ export class UnauthGuard implements CanActivate {
   // Allows access to the route if the user is not logged in
   public canActivate(): boolean {
     if (this.sessionService.isLogged) {
-      this.router.navigateByUrl('/posts');
+      this.router.navigateByUrl('/');
       return false;
     }
     return true;

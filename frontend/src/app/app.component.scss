@@ -11,6 +11,16 @@
             margin: 9px 20px 0 30px;
         } 
     }
+
+    .logout-text {
+        display: inline;
+    }
+    
+    .logout-smiley {
+        font-size: 26px;
+        display: none;
+    }
+
 }
    
 @media (max-width: 425px) {
@@ -23,8 +33,17 @@
                 font-size: 15px;
             }
         }
+        
         .mat-mdc-raised-button {
             font-size: 10px;
+        }
+
+        .logout-text {
+            display: none;
+        }
+          
+        .logout-smiley {
+            display: inline;
         }
         
     }
