@@ -15,7 +15,7 @@ import com.alexia.backend.servicesImpl.MessageServiceImpl;
  */
 @Controller
 @CrossOrigin(origins = "*")
-public class websocketChatController {
+public class WebsocketChatController {
 
     @Autowired
     private MessageServiceImpl messageService;

@@ -14,7 +14,7 @@ export class ChatService {
 
   //  Initializes the WebSocket connection and subscribes to the user's chat
   public initializeWebSocketConnection(userId: number): Observable<Message> {
-    const socket = new SockJS('http://localhost:8080/ws');
+    const socket = new SockJS('http://localhost:8080/wss');
     this.stompClient = Stomp.over(socket);
     return new Observable<Message>(observer => {
       this.stompClient.connect({}, () => {
