@@ -4,26 +4,28 @@ Chat-App is a proof of concept (POC) for real-time chat between a customer and a
 ## Features
 
 Real-time Connection: Users already registered can connect and communicate in real-time using WebSocket. The agent can switch between multiple chats with different customers.
+
 Message History: Users can view previous message history.
+
 User-Friendly Interface: A user-friendly and intuitive interface allows users to send and receive messages easily.
 
 
 ## Technologies Used
 
 ### Frontend
-Angular
-WebSocket (via SockJS and STOMP)
-HTML
-CSS
+- Angular
+- WebSocket (via SockJS and STOMP)
+- HTML
+- CSS
 
 ### Backend
-Java
-Spring Boot
-WebSocket (via Spring's WebSocket support)
+- Java
+- Spring Boot
+- WebSocket (via Spring's WebSocket support)
 
 ### Database
-MySQL
-MySQL Workbench
+- MySQL
+- MySQL Workbench
 
 
 ## Getting Started
@@ -38,7 +40,7 @@ MySQL Workbench
 
 ### Clone the Project
 
-git clone [https://github.com/alexia-pratensi/Application-full-stack-complete.git](https://github.com/alexia-pratensi/chat-app.git)https://github.com/alexia-pratensi/chat-app.git
+git clone https://github.com/alexia-pratensi/chat-app.git
 
 ### Install Dependencies
 
