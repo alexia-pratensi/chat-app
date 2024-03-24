@@ -74,12 +74,15 @@ Don't forget to add your database credentials in application.properties :
 ### Backend:
 
 cd chat-app/backend
+
 Run this command line: mvn spring-boot:run
-or run the app with the 
+
+or run the app with your IDE
 
 ### Frontend:
 
 cd chat-app/frontend
+
 Run this command line: ng s
 
 ## Author
