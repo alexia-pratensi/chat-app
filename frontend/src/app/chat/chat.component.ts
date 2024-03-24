@@ -1,4 +1,4 @@
-import { AfterViewChecked, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { AfterViewChecked, ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Message } from 'src/app/interfaces/message.interface';
 import { User } from 'src/app/interfaces/user.interface';
 import { ChatService } from 'src/app/services/chat.service';
@@ -18,13 +18,13 @@ export class ChatComponent implements OnInit, AfterViewChecked {
   messages: Message[] = [];
   newMessage: string = '';
   currentUser$!: User ;
-  currentDateTime = new Date().toISOString();
   userChatId!: number;
 
   constructor(private chatService: ChatService,
               private userService: UserService,
               private messageApiService: MessageApiService,
-              private route: ActivatedRoute) { }
+              private route: ActivatedRoute,
+              private cdr: ChangeDetectorRef) { }
 
   ngOnInit(): void {
     // Fetching the currently logged-in user
@@ -36,10 +36,7 @@ export class ChatComponent implements OnInit, AfterViewChecked {
         this.loadMessageHistory(this.userChatId);
       });
       // Initializing WebSocket connection for real-time updates
-      this.chatService.initializeWebSocketConnection(this.userChatId).pipe(take(1)).subscribe(message => {
-        // Adding the new received message to the messages list
-        this.messages.push(message);
-      });
+      this.chatService.initializeWebSocketConnection(this.userChatId).pipe(take(1)).subscribe() ;
     });
   }
 
@@ -63,12 +60,13 @@ export class ChatComponent implements OnInit, AfterViewChecked {
       const message: Message = {
         content: this.newMessage,
         sourceUser: this.currentUser$,
-        createdAt: this.currentDateTime
+        createdAt: new Date().toISOString()
       };
       // Sending the message via the chat service
-      console.log("this.userChatId" + this.userChatId);
       this.chatService.sendMessage(message, this.userChatId);
+      this.messages = [...this.messages, message];
       this.newMessage = '';
+      this.cdr.detectChanges(); 
     }
   }
   
