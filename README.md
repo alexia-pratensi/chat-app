@@ -32,9 +32,9 @@ User-Friendly Interface: A user-friendly and intuitive interface allows users to
 
 ### Prerequisites
 
-- Java Development Kit (JDK) 17
+- Java Development Kit (JDK)
 - Maven
-- Angular CLI 14 and Nodes.js
+- Angular CLI and Nodes.js
 - MySQL
 
 
